@@ -212,6 +212,7 @@ export class Drag extends Plugin
 
     private addWindowEventHandler(event: string, handler: (e: any) => void): void
     {
+        if (typeof window === 'undefined') return;
         window.addEventListener(event, handler);
         this.windowEventHandlers.push({ event, handler });
     }
